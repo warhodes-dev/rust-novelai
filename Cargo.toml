@@ -1,0 +1,32 @@
+[package]
+name = "novelai"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+#           Consider changing this
+#                               └───────────┐
+tokio = { version = "1.20.1", features = ["full"] }
+
+reqwest = { version = "0.11.11", features = ["json"] }
+http = "0.2.8"
+
+serde = { version = "1.0.144", features = ["derive"] }
+serde_json = "1.0.85"
+serde_with_macros = "2.0.0"
+
+derivative = "2.2.0"
+
+blake2 = "0.10.4"
+rust-argon2 = "1.0.0"
+base64 = "0.13.0"
+
+thiserror = "1.0.33"
+
+# For debugging stuff
+rpassword = "7.0.0"
+
+termion = "1.5.6"
+colored = "2.0.0"
