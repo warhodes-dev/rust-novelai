@@ -7,7 +7,7 @@ use crate::error::Error;
 pub mod user;
 pub mod ai;
 
-const NOVELAI: &str = "https://api.novelai.net";
+const URL: &str = "https://api.novelai.net";
 
 #[derive(Deserialize, Debug)]
 pub struct ErrorResponse {
@@ -26,7 +26,7 @@ impl std::error::Error for ErrorResponse {}
 
 pub async fn status() -> Result<()> {
     let res = reqwest::Client::new()
-        .get(format!("{NOVELAI}/"))
+        .get(format!("{URL}/"))
         .send().await?;
 
     if res.status().is_success() {
@@ -51,8 +51,8 @@ mod tests {
 
     #[tokio::test]
     async fn fail_login() {
-        let key = get_access_key("warhodes@gmail.com", "blahblahblah").unwrap();
-        let weenie = login(key).await;
-        println!("weenie: {:?}", weenie);
+        let key = get_access_key("nobody@anywhere.com", "blahblahblah").unwrap();
+        let access_token = login(key).await;
+        println!("access token: {access_token:?}");
     }
 }

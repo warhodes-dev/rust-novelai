@@ -3,14 +3,15 @@ use serde_json::Value;
 use crate::{
     Result,
     error::Error,
-    api::{NOVELAI, ErrorResponse},
+    api::{URL, ErrorResponse},
 };
 
 pub mod subscription;
 
+/// Returns: accessToken
 pub async fn login(key: String) -> Result<String> {
     let res = reqwest::Client::new()
-        .post(format!("{NOVELAI}/user/login"))
+        .post(format!("{URL}/user/login"))
         .json(&serde_json::json!({
             "key": key,
         }))
