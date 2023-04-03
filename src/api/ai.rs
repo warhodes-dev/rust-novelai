@@ -1,7 +1,7 @@
 use serde::{Serialize, Deserialize};
 use serde_with_macros::skip_serializing_none;
 use crate::{
-    api::{NOVELAI, ErrorResponse},
+    api::{URL, ErrorResponse},
     Result, 
     error::Error
 };
@@ -19,7 +19,7 @@ pub async fn generate(
     }
 
     let res = reqwest::Client::new()
-        .post(format!("{NOVELAI}/ai/generate"))
+        .post(format!("{URL}/ai/generate"))
         .json(&serde_json::json!({
             "input": input,
             "model": model.as_str(),

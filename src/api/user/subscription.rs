@@ -3,7 +3,7 @@ use serde_json::Value;
 use crate::{
     Result,
     error::Error,
-    api::{NOVELAI, ErrorResponse},
+    api::{URL, ErrorResponse},
 };
 
 pub enum PaymentProcessor {

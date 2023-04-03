@@ -44,8 +44,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let memory = "";
     let prompt = "You are walking through a calm forest when you hear a soft rustling coming from behind a nearby tree.";
-                  //A cute, soft bunnyboy emerges from the woods, wearing nothing but a winter sweater and some pink and \
-                  //white socks. He blushes when he notices you staring at him.";
 
     let mut text_buf = String::from(prompt);
 
